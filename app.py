@@ -8,6 +8,11 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 # Set maximum file size (16MB)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
+
+@app.route('/')
+def index():
+    return "Brain Disease Diagnosis API"
+
 @app.route('/api/health')
 def health_check():
     return jsonify({
